@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WEBAPPS ASSIGNMENT-6</title>
+</head>
+<body>
+
+<h2>Musician guess by Vyshnavi Kattamuri</h2>
+
+<form>
+    <label for="musician_name">Enter the secret musician name </label>
+    <input type ="password" id="musician_name" name="musician_name" min=10 max=50 step=2 value="John Lennon"> <br>
+
+    <label for="input_check"> Guess the musician </label>
+    <input type ="text" id="input_check" name="input_check" autofocus> <br>
+
+    <input type="button" onclick="checkGuess()" value="Check the guess">
+
+</form>
+
+
+<p id="result"> To store the Results </p>
+
+<script>
+var correct = 0;
+var wrong = 0;
+function checkGuess(){
+    console.log("Getting form values")
+    name = document.getElementById("musician_name").value
+    check = document.getElementById("input_check").value
+    if(name===check){
+        correct=correct+1
+        document.getElementById("result").innerHTML="Correct "+correct;
+        alert("You got it right");
+    } else{
+        wrong=wrong+1
+        document.getElementById("result").innerHTML="Wrong "+wrong;
+        alert("Wrong Musician");
+    }
+}
+</script>
+
+</body>
+</html> 

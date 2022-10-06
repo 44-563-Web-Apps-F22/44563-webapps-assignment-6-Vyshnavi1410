@@ -2,6 +2,10 @@
 <html>
 <head>
     <title>WEBAPPS ASSIGNMENT-6</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 
@@ -14,14 +18,14 @@
     <label for="input_check"> Guess the musician </label>
     <input type ="text" id="input_check" name="input_check" autofocus> <br>
 
-    <input type="button" onclick="checkGuess()" value="Check the guess">
+    <input type="button" onclick="checkGuess()" value="Check the guess" style="background-color: orangered;">
 
 </form>
-<div class="container">
-    <img src="Midges.jpg" id="image" alt="Midges Image" width="100px" height="100px" onclick="swapImage()" >
+<div class="container" style="color: grey;">
+    <img src="Midges.jpg" id="image" alt="Midges Image" width="100px" height="100px" onclick="swapImage()" style="position: left;">
 </div>
 
-<p id="result"> To store the Results </p>
+<p id="result" style="background-color: grey;"> To store the Results </p>
 
 <script>
 var correct = 0;
@@ -39,6 +43,9 @@ function checkGuess(){
         wrong=wrong+1
         document.getElementById("result").innerHTML="Wrong "+wrong;
         alert("Wrong Musician");
+        if(wrong>=3){
+            showAlert();
+        }
     }
 }
 
@@ -57,6 +64,10 @@ function swapImage(){
             useImage = 1;
             break;
     }
+}
+
+function showAlert(){
+    alert("Sorry, game over.");
 }
 </script>
 
